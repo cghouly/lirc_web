@@ -30,6 +30,7 @@ As of v0.0.8, ``lirc_web`` supports customization through a configuration file (
 2. ``macros`` - a collection of commands that should be executed one after another. This allows you to automate actions like "Play Xbox 360" or "Listen to music via AirPlay". Each step in a macro is described in the format ``[ "REMOTE", "COMMAND" ]``, where ``REMOTE`` and ``COMMAND`` are defined by what you have programmed into LIRC. You can add delays between steps of macros in the format of ``[ "delay", 500 ]``. Note that the delay is measured in milliseconds so 1000 milliseconds = 1 second.
 3. ``commandLabels`` - a way to rename commands that LIRC understands (``KEY_POWER``, ``KEY_VOLUMEUP``) with labels that humans prefer (``Power``, ``Volume Up``).
 4. ``remoteLabels`` - a way to rename the remotes that LIRC understands (``XBOX360``) with labels that humans prefer (``Xbox 360``).
+5. ``customremotes`` - buttons from separate remotes can be combined into one remote page. Syntax is: [ "remote name" "command" "custom name for command" ]
 
 
 #### Example config.json:
@@ -68,6 +69,14 @@ As of v0.0.8, ``lirc_web`` supports customization through a configuration file (
       },
       "remoteLabels": {
          "Xbox360": "Xbox 360"
+      },
+      "customremotes": {
+        "LivingRoom": [
+          [ "SonyTV", "Power", "Power TV" ],
+          [ "Yamaha", "Power", "Power Yamaha" ],
+          [ "Yamaha", "VolumeUp", "Volume Up" ],
+          [ "Yamaha", "VolumeDown", "Volume Down" ]
+        ]
       }
     }
 

@@ -19,6 +19,10 @@ describe('lirc_web', function() {
         it('should have GET route for JSON list of macros', function(done) {
             assert(request(app).get('/macros.json').expect(200, done));
         });
+        
+        it('should have GET route for JSON list of customremotes', function(done) {
+            assert(request(app).get('/customremotes.json').expect(200, done));
+        });
 
         it('should have GET route for JSON list of remotes', function(done) {
             assert(request(app).get('/remotes.json').expect(200, done));
@@ -30,6 +34,10 @@ describe('lirc_web', function() {
 
         it('should have GET route for JSON list of commands for macro', function(done) {
             assert(request(app).get('/macros/Play%20Xbox%20360.json').expect(200, done));
+        });
+        
+        it('should have GET route for JSON list of commands for customremote', function(done) {
+            assert(request(app).get('/customremotes/Living%20Room.json').expect(200, done));
         });
 
         it('should return 404 for unknown remote', function(done) {
