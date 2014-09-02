@@ -17,5 +17,13 @@
       [ "Yamaha", "Power" ],
       [ "Yamaha", "AirPlay" ]
     ]
+  },
+  "customremotes": {
+    "LivingRoom": [
+      [ "SonyTV", "Power", "Power TV" ],
+      [ "Yamaha", "Power", "Power Yamaha" ],
+      [ "Yamaha", "VolumeUp", "Volume Up" ],
+      [ "Yamaha", "VolumeDown", "Volume Down" ]
+    ]
   }
 }

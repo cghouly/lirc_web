@@ -54,7 +54,8 @@ app.get('/', function(req, res) {
     res.send(JST['index'].render({
         remotes: lirc_node.remotes,
         macros: config.macros,
-        repeaters: config.repeaters
+        repeaters: config.repeaters,
+        customremotes: config.customremotes
     }));
 });
 
@@ -81,6 +82,20 @@ app.get('/macros.json', function(req, res) {
 app.get('/macros/:macro.json', function(req, res) {
     if (config.macros && config.macros[req.params.macro]) {
         res.json(config.macros[req.params.macro]);
+    } else {
+        res.send(404);
+    }
+});
+
+// List all customremotes in JSON format
+app.get('/customremotes.json', function(req, res) {
+    res.json(config.customremotes);
+});
+
+// List all commands for :customremote in JSON format
+app.get('/customremotes/:customremote.json', function(req, res) {
+    if (config.customremotes && config.customremotes[req.params.customremote]) {
+        res.json(config.customremotes[req.params.customremote]);
     } else {
         res.send(404);
     }

@@ -28,6 +28,7 @@ As of v0.0.8, ``lirc_web`` supports customization through a configuration file (
 
 1. ``repeaters`` - buttons that repeatedly send their commands while pressed. A common example are the volume buttons on most remote controls. While you hold the volume buttons down, the remote will repeatedly send the volume command to your device.
 2. ``macros`` - a collection of commands that should be executed one after another. This allows you to automate actions like "Play Xbox 360" or "Listen to music via AirPlay"
+3. ``customremotes`` - buttons from separate remotes can be combined into one remote page. Syntax is: [ "remote name" "command" "custom name for command" ]
 
 
 #### Example config.json:
@@ -51,6 +52,14 @@ As of v0.0.8, ``lirc_web`` supports customization through a configuration file (
         "Listen to Music": [
           [ "Yamaha", "Power" ],
           [ "Yamaha", "AirPlay" ]
+        ]
+      }
+      "customremotes": {
+        "LivingRoom": [
+          [ "SonyTV", "Power", "Power TV" ],
+          [ "Yamaha", "Power", "Power Yamaha" ],
+          [ "Yamaha", "VolumeUp", "Volume Up" ],
+          [ "Yamaha", "VolumeDown", "Volume Down" ]
         ]
       }
     }
