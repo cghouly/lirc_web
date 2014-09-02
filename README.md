@@ -74,6 +74,8 @@ API endpoints:
 * ``GET`` ``/remotes.json`` - Returns all known remotes and commands
 * ``GET`` ``/remotes/:remote.json`` - Returns all known commands for remote ``:remote``
 * ``GET`` ``/macros.json`` - Returns all known macros
+* ``GET`` ``/customremotes.json`` - Returns all known customremotes and commands
+* ``GET`` ``/customremotes/:customremote.json`` - Returns all known commands for customremote ``:customremote``
 * ``POST`` ``/remotes/:remote/:command`` - Send ``:command`` to ``:remote`` one time
 * ``POST`` ``/remotes/:remote/:command/send_start`` - Begin sending ``:command``
 * ``POST`` ``/remotes/:remote/:command/send_stop`` - Stop sending ``:command``
