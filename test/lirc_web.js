@@ -37,7 +37,7 @@ describe('lirc_web', function() {
         });
         
         it('should have GET route for JSON list of commands for customremote', function(done) {
-            assert(request(app).get('/customremotes/Living%20Room.json').expect(200, done));
+            assert(request(app).get('/customremotes/LivingRoom.json').expect(200, done));
         });
 
         it('should return 404 for unknown remote', function(done) {
