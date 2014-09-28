@@ -27,7 +27,7 @@
         <li><a class="btn btn-wide btn-large btn-info" href="#{{ remoteName }}">{{ remoteName }}</a></li>
       {% endfor %}
       </ul>
-      
+
       <hr />
 
       <ul class="macros-nav">
