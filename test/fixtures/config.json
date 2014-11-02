@@ -25,6 +25,12 @@
       "KEY_VOLUMEDOWN": "Vol-",
       "KEY_CHANNELUP": "Channel Up",
       "KEY_CHANNELDOWN": "Channel Down"
+    },
+    "SonyTV": {
+      "KEY_POWER": "TV Power"
+    },
+    "Yamaha": {
+      "KEY_POWER": "Audio Power"
     }
   },
   "remoteLabels": {
@@ -32,10 +38,10 @@
   },
   "customremotes": {
     "LivingRoom": [
-      [ "SonyTV", "Power", "Power TV" ],
-      [ "Yamaha", "Power", "Power Yamaha" ],
-      [ "Yamaha", "VolumeUp", "Volume Up" ],
-      [ "Yamaha", "VolumeDown", "Volume Down" ]
+      [ "SonyTV", "KEY_POWER" ],
+      [ "Yamaha", "KEY_POWER" ],
+      [ "Yamaha", "KEY_VOLUMEUP" ],
+      [ "Yamaha", "KEY_VOLUMEDOWN" ]
     ]
   }
 }

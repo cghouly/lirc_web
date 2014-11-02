@@ -24,7 +24,7 @@
       <ul class="remotes-nav">
       {% for customremote in customremotes %}
         {% set remoteName = loop.key %}
-        <li><a class="btn btn-wide btn-large btn-info" href="#{{ remoteName }}">{{ remoteName }}</a></li>
+        <li><a class="btn btn-wide btn-large btn-info" href="#{{ remoteName }}">{{ labelForRemote(remoteName) }}</a></li>
       {% endfor %}
       </ul>
 
@@ -58,8 +58,10 @@
         <li class="remote" id="{{ remoteName }}">
           <ul class="commands">
           {% for command in customremote %}
+             {% set remoteName = command[0] %}
+             {% set commandName = command[1] %}
              <li class="command">
-               <button class="command-link {% if repeaters[command[0]][command[1]] %}command-repeater{% else %}command-once{% endif %} btn btn-wide btn-large btn-primary" href="/remotes/{{ command[0] }}/{{ command[1]|url_encode }}">{{ command[2] }}</button>
+               <button class="command-link {% if repeaters[remoteName][commandName] %}command-repeater{% else %}command-once{% endif %} btn btn-wide btn-large btn-primary" href="/remotes/{{ remoteName }}/{{ commandName|url_encode }}">{{ labelForCommand(remoteName, commandName) }}</button>
              </li>
           {% endfor %}
           </ul>
