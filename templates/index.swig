@@ -24,9 +24,6 @@
         {% set remoteName = loop.key %}
         <li><a class="btn btn-wide btn-large btn-info" href="#{{ remoteName }}">{{ labelForRemote(remoteName) }}</a></li>
       {% endfor %}
-      </ul>
-
-      <ul class="remotes-nav">
       {% for customremote in customremotes %}
         {% set remoteName = loop.key %}
         <li><a class="btn btn-wide btn-large btn-info" href="#{{ remoteName }}">{{ labelForRemote(remoteName) }}</a></li>
